@@ -22,3 +22,12 @@ stages:
     - src/train.py
     outs:
     - model.pkl
+  evaluate:
+    cmd: python src/evaluate.py
+    deps:
+    - data/processed/test.csv
+    - model.pkl
+    - src/evaluate.py
+    metrics:
+    - metrics.json:
+        cache: false
