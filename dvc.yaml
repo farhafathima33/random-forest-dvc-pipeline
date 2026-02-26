@@ -18,10 +18,14 @@ stages:
     cmd: python src/train.py
     deps:
     - data/processed/train.csv
-    - params.yaml
     - src/train.py
     outs:
     - model.pkl
+    params:
+    - train.max_depth
+    - train.min_samples_split
+    - train.n_estimators
+    - train.random_state
   evaluate:
     cmd: python src/evaluate.py
     deps:
