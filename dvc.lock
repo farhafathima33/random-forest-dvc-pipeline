@@ -78,3 +78,23 @@ stages:
       hash: md5
       md5: e6a45ef39ea125005be173b46c30e999
       size: 177
+  feature_importance:
+    cmd: python src/feature_importance.py
+    deps:
+    - path: data/processed/train.csv
+      hash: md5
+      md5: 7bab774b027c20cb0c5d906f7b085507
+      size: 97196
+    - path: model.pkl
+      hash: md5
+      md5: 8e0a6eab7d5303b10434e241784de755
+      size: 159005
+    - path: src/feature_importance.py
+      hash: md5
+      md5: aa99f77e6ba85fc4d9126fcfd3acd5af
+      size: 863
+    outs:
+    - path: feature_importance.csv
+      hash: md5
+      md5: 8ad1bb78cff24709dc0d84c131b9ab70
+      size: 369
