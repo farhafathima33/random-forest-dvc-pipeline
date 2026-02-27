@@ -43,3 +43,9 @@ stages:
     - src/feature_importance.py
     outs:
     - feature_importance.csv
+  error_analysis:
+    cmd: python src/error_analysis.py
+    deps:
+    - data/processed/test.csv
+    - model.pkl
+    - src/error_analysis.py
