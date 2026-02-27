@@ -35,3 +35,11 @@ stages:
     metrics:
     - metrics.json:
         cache: false
+  feature_importance:
+    cmd: python src/feature_importance.py
+    deps:
+    - data/processed/train.csv
+    - model.pkl
+    - src/feature_importance.py
+    outs:
+    - feature_importance.csv
