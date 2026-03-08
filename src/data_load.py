@@ -5,7 +5,15 @@ def main():
     print("Loading raw dataset...")
 
     # Load raw data
-    df = pd.read_csv("data/raw/data.csv")
+    df = pd.read_csv("data/raw/train.csv")
+
+    # Drop text columns that ML cannot use
+    df = df.drop(columns=["Name", "Ticket", "Cabin"])
+
+    # Convert categorical columns to numbers
+    df["Sex"] = df["Sex"].map({"male": 0, "female": 1})
+    df["Embarked"] = df["Embarked"].fillna("S")
+    df = pd.get_dummies(df, columns=["Embarked"], drop_first=True)
 
     print("Dataset shape before cleaning:", df.shape)
 

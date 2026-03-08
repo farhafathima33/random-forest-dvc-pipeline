@@ -8,8 +8,8 @@ def main():
 
     train_data = pd.read_csv("data/processed/train.csv")
 
-    X = train_data.drop("target", axis=1)
-    y = train_data["target"]
+    X = train_data.drop("Survived", axis=1)
+    y = train_data["Survived"]
 
     print("Loading hyperparameters...")
 

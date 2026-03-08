@@ -12,7 +12,7 @@ def main():
         df,
         test_size=0.2,
         random_state=42,
-        stratify=df["target"]
+        stratify=df["Survived"]
     )
 
     train.to_csv("data/processed/train.csv", index=False)

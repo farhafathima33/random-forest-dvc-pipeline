@@ -2,7 +2,7 @@ stages:
   load_data:
     cmd: python src/data_load.py
     deps:
-    - data/raw/data.csv
+    - data/raw/train.csv
     - src/data_load.py
     outs:
     - data/processed/data.csv

@@ -13,8 +13,8 @@ def main():
     print("Loading test data...")
     test = pd.read_csv("data/processed/test.csv")
 
-    X_test = test.drop("target", axis=1)
-    y_test = test["target"]
+    X_test = test.drop("Survived", axis=1)
+    y_test = test["Survived"]
 
     print("Loading trained model...")
     with open("model.pkl", "rb") as f:

@@ -9,7 +9,7 @@ def main():
     print("Loading training data for feature names...")
     train = pd.read_csv("data/processed/train.csv")
 
-    X = train.drop("target", axis=1)
+    X = train.drop("Survived", axis=1)
 
     print("Extracting feature importances...")
 
